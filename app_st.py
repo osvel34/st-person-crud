@@ -1,5 +1,6 @@
 import streamlit as st
 import sqlite3
+import pandas as pd
 
 # Crear o conectar a la base de datos SQLite
 conn = sqlite3.connect('personasdb.db')
@@ -23,7 +24,9 @@ def insertar_persona(nombre, edad):
 # Función para obtener todas las personas de la base de datos
 def obtener_personas():
     c.execute("SELECT nombre, edad FROM personas")
-    return c.fetchall()
+    data = c.fetchall()
+    df = pd.DataFrame(data, columns=['Nombre', 'Edad'])
+    return df
 
 # Aplicación Streamlit
 st.title("Registro de Personas")
@@ -38,11 +41,10 @@ if st.button("Agregar"):
 
 # Mostrar la lista de personas
 st.header("Lista de Personas")
-personas = obtener_personas()
-if personas:
-    st.write("Nombre - Edad")
-    for persona in personas:
-        st.write(f"{persona[0]} - {persona[1]}")
+personas_df = obtener_personas()
+if not personas_df.empty:
+    #st.write(personas_df)
+    st.table(personas_df)
 else:
     st.info("No hay personas registradas en la base de datos.")
 
