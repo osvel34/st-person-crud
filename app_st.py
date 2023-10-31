@@ -16,7 +16,6 @@ c = conn.cursor()
 #''')
 #conn.commit()
 
-
 # Función para insertar una persona en la base de datos
 def insertar_persona(nombre, edad):
     c.execute("INSERT INTO personas (nombre, edad) VALUES (?, ?)", (nombre, edad))
