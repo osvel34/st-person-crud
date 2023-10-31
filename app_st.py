@@ -29,7 +29,7 @@ def obtener_personas():
     return df
 
 # Aplicación Streamlit
-st.title("Registro de Personas")
+st.title("Registro de Personas en la ciudad")
 
 # Formulario para agregar una nueva persona
 nuevo_nombre = st.text_input("Nombre")
