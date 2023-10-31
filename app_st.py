@@ -7,14 +7,14 @@ conn = sqlite3.connect('personasdb.db')
 c = conn.cursor()
 
 # Crear la tabla si no existe
-c.execute('''
-    CREATE TABLE IF NOT EXISTS personas (
-        id INTEGER PRIMARY KEY,
-        nombre TEXT,
-        edad INTEGER
-    )
-''')
-conn.commit()
+#c.execute('''
+#    CREATE TABLE IF NOT EXISTS personas (
+#        id INTEGER PRIMARY KEY,
+#        nombre TEXT,
+#        edad INTEGER
+#    )
+#''')
+#conn.commit()
 
 
 # Función para insertar una persona en la base de datos
