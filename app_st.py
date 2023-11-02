@@ -2,7 +2,7 @@ import streamlit as st
 import sqlite3
 import pandas as pd
 
-# Crear o conectar a la base de datos SQLite 
+#· Crear o conectar a la base de datos SQLite 
 conn = sqlite3.connect('personasdb.db')
 c = conn.cursor() 
 
