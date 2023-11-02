@@ -4,7 +4,7 @@ import pandas as pd
 
 # Crear o conectar a la base de datos SQLite
 conn = sqlite3.connect('personasdb.db')
-c = conn.cursor()
+c = conn.cursor() 
 
 # Crear la tabla si no existe
 #c.execute('''
